@@ -12,8 +12,9 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "outDir": "out"
   },
-  "include": ["src/**/*.ts", "frontend/**/*.ts", "frontend/index.js"],
+  "include": ["ext-src/**/*.ts"],
   "exclude": []
 }

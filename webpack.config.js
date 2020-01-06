@@ -9,7 +9,7 @@ const baseDir = path.resolve(__dirname);
 const frontendFolder = require("path").resolve(__dirname, "frontend");
 
 // public path for resources, must match Flow VAADIN_BUILD
-const build = "build";
+const build = "out";
 
 const devMode = process.argv.find(v => v.indexOf("webpack-dev-server") >= 0);
 

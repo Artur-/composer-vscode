@@ -4,6 +4,10 @@
   "displayName": "Vaadin Composer",
   "description": "WYSIWYG editor for Lit",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Artur-/"
+  },
   "engines": {
     "vscode": "^1.41.0"
   },
@@ -13,7 +17,7 @@
   "activationEvents": [
     "onCommand:composer.start"
   ],
-  "main": "./out/src/extension.js",
+  "main": "./out/composer-ext.js",
   "contributes": {
     "commands": [
       {
@@ -23,8 +27,8 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./ --rootDir src",
+    "vscode:prepublish": "npm run compile && webpack  frontend/main-view.js",
+    "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile",
     "test": "node ./out/test/runTest.js"
