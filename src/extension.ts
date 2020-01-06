@@ -80,7 +80,7 @@ class ComposerPanel {
 
     // Update the content based on view changes
     this._panel.onDidChangeViewState(
-      e => {
+      () => {
         if (this._panel.visible) {
           this._update();
         }
@@ -139,7 +139,7 @@ class ComposerPanel {
     this._panel.title = catName;
     this._panel.webview.html = this._getHtmlForWebview(webview, catName);
   }
-  private _getHtmlForWebview(webview: vscode.Webview, catName: string) {
+  private _getHtmlForWebview(webview: vscode.Webview, _catName: string) {
     // Local path to main script run in the webview
     const scriptPathOnDisk = vscode.Uri.file(
       path.join(this._extensionPath, "build", "main.js")
