@@ -55,8 +55,8 @@ class ComposerPanel {
         // Enable javascript in the webview
         enableScripts: true,
 
-        // And restrict the webview to only loading content from our extension's `editor` directory.
-        localResourceRoots: [vscode.Uri.file(path.join(extensionPath, "build"))]
+        // And restrict the webview to only loading content from one directory.
+        localResourceRoots: [vscode.Uri.file(path.join(extensionPath, "out"))]
       }
     );
 
@@ -142,7 +142,7 @@ class ComposerPanel {
   private _getHtmlForWebview(webview: vscode.Webview, _catName: string) {
     // Local path to main script run in the webview
     const scriptPathOnDisk = vscode.Uri.file(
-      path.join(this._extensionPath, "build", "main.js")
+      path.join(this._extensionPath, "out", "main.js")
     );
 
     // And the uri we use to load this script in the webview
